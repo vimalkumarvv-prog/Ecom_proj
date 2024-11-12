@@ -1,0 +1,303 @@
+{% load static %}
+<!--<header>-->
+<!--    <center>-->
+<!--        <img src="{% static 'images/shop_logo.jpeg' %}" alt=logo style="height:115px; width:115px;">-->
+<!--    </center>-->
+<!--</header>-->
+<head>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+*{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     }
+
+
+body{
+font-family: 'poppins', sans-serif;
+}
+
+.navbar{
+display:flex ;
+align-items; center;
+padding:20px;
+}
+
+nav{
+flex: 1;
+text-align: right;
+}
+nav ul{
+display: inline-block;
+list-style-type: none;
+}
+
+nav ul li{
+display: inline-block;
+margin-right: 20px;
+}
+
+a{
+text-decoration: none;
+color: #555;
+ }
+p{
+color: #555;
+}
+
+    .container{
+    max-width: 1300px;
+    margin: auto;
+    padding-left:25px;
+    padding-right:25px;
+    }
+
+    .row{
+    display:flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    }
+
+    .col-2{
+    flex-basis: 50%;
+    min-width:300px;
+    }
+
+    .col-2 img{
+    max-width: 100%;
+    padding: 0px 0;
+
+    }
+
+    .col-2 h1{
+    font-size: 50px;
+    line-height: 60px;
+    margin: 25px 0;
+    }
+
+    .btn{
+    display: inline-block;
+    background: #ff523b;
+    color: #fff;
+    padding: 8px 30px;
+    margin: 30px 0;
+    border-radius: 30px;
+    transition: background 0.5s;
+    }
+
+    .btn:hover{
+    background: #563434;
+    }
+
+    .logo img{
+    padding: 0px 0;
+    display:flex;}
+
+    .header{
+    background: radial-gradient(#fff,#ffd6d6)
+    }
+
+    .header .row{
+    margin-top: 70px;
+    }
+
+    .categories{
+    margin: 70px 0px;
+    }
+
+    .col-3{
+    flex-basis: 30%;
+    min-width: 250px;
+    margin-bottom: 30px;}
+
+    .col-3 img{
+    width: 100%;
+    }
+
+    .small-container{
+    max-width:1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+
+    }
+
+    .col-4{
+    flex basis:25%;
+    padding:10px;
+    min-width: 200px;
+    margin-bottom: 50px;
+    transition: transform 0.5s;
+    }
+
+    .col-4 img{
+    width: 100%;
+    }
+
+    .title{
+    text-align: center;
+    margin: 0 auto 80px;
+    position: relative;
+    line-height: 60px;
+    color: #555;
+    }
+
+    .title::after{
+    content:'';
+    width:80px;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff523b;
+
+    }
+
+    h4{
+    color:#555;
+    font-weight: normal;
+    }
+
+    .col-4 p{
+    font-size: 14px;
+    }
+
+    .rating {
+    color: #ff523b;
+    }
+
+    .col-4:hover{
+    transform: translateY(-5px)
+    }
+
+
+
+
+
+  </style>
+</head>
+
+<body>
+
+<div class="header">
+  <div class="container">
+    <div class="navbar">
+      <div class="logo">
+        <img src="{% static 'images/file.png' %}" alt=logo style="height:100px; width:150px;">
+         </div>
+           <nav>
+             <ul>
+               <li><a href="/Home/">Home</a></li>
+               <li><a href="">Products</a></li>
+               <li><a href="/signin/">Signin</a></li>
+               <li><a href="/signup/">Signup</a></li>
+               <li><a href="/signout/">Logout</a></li>
+               <li><a href="Home/">About</a></li>
+               <li><a href="Home/">Contact</a></li>
+
+             </ul>
+           </nav>
+      <img src="{% static 'images/image.png' %}" style="height:30px; width:60px;">
+    </div>
+    <div class="row">
+      <div class="col-2">
+        <h1>Give Your Workout <br>A New Style!</h1>
+        <p>Success isn't always about greatness.It's about consistency. Consistent <br>hard work gains success. Greatness will come.</p>
+        <a href="" class="btn">Explore Now &#8594;</a>
+      </div>
+      <div class="col-2">
+        <img src="{%static 'images/cp.png' %}" alt="fashion_image" >
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--     featured categories-->
+<div class="categories">
+    <div class="small-container">
+        <div class="row">
+            <div class="col-3">
+                <img src="{% static 'images/image1.png' %}" alt="..." style="height:500px; width:330px;">
+            </div>
+            <div class="col-3">
+                <img src="{% static 'images/image2.png' %}" alt="..." style="height:500px; width:330px;">
+            </div>
+            <div class="col-3">
+                <img src="{% static 'images/image3.png' %}" alt="..." style="height:500px; width:330px;">
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'featured_products.html' %}
+
+    <h2 class="title">Latest Products</h2>
+<div class="row">
+    <div class="col-4">
+        <img src="{% static 'images/earbud.jpeg' %}" class="card-img-top" alt="Ear Buds" style="height:200px; width:200px;">
+        <h4>Ear Buds</h4>
+        <div class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+        </div>
+        <p>Rs.10,000</p>
+    </div>
+
+    <div class="col-4">
+        <img src="{% static 'images/perfume.jpeg' %}" class="card-img-top" alt="Perfume" style="height:200px; width:200px;">
+        <h4>Perfume</h4>
+        <div class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+        </div>
+        <p>Rs.500</p>
+    </div>
+
+    <div class="col-4">
+        <img src="{% static 'images/hairband.jpeg' %}" class="card-img-top" alt="Hairband" style="height:200px; width:200px;">
+        <h4>Nike Hairband</h4>
+        <div class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+        </div>
+        <p>Rs.890</p>
+    </div>
+
+    <div class="col-4">
+        <img src="{% static 'images/specs.jpeg' %}" class="card-img-top" alt="Ear Buds" style="height:200px; width:200px;">
+        <h4>Iphone 15 pro max</h4>
+        <div class="rating">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i>
+        </div>
+        <p>Rs.150,000</p>
+    </div>
+</div>
+
+</body>
+
+
+

@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<title>Login Page</title>
+
+<head>
+    <style>
+
+
+
+label {
+color: black;
+text-transform: uppercase;
+font-size: 10px;
+letter-spacing: 2px;
+padding-left: 12px;
+}
+
+input {
+background: rgba(255,255,255,0.3);
+height:40px;
+line-height:40px;
+border-radius: 20px;
+padding: 0px 20px;
+border:none;
+margin-bottom:20px;
+color: yellow;
+}
+
+ button {
+background: rgb(45,126,231);
+height: 40px;
+line-height: 40px;
+border-radius: 40px;
+border: none;
+margin: 10px 0px;
+box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+color: white;
+font-size:12px;
+text-transform: uppercase;
+}
+
+    </style>
+</head>
+
+<h5> Enter your credentials and login</h5>
+{% if messages %}
+           <ul class="messages">
+               {% for message in messages %}
+               <li>{% if messages.tags %} class="{{message.tags}}"{% endif %}{{message}}</li>
+               {% endfor %}
+           </ul>
+{% endif %}
+<form method="post" action="/signin/">
+    {% csrf_token %}
+    <label for="">Username</label>
+    <input type="text" id="username" name="username" placeholder="Enter your username" Required>
+    <br>
+
+    <label for="">Password</label>
+    <input type="password" id="password1" name="password1" placeholder="Enter your password" Required>
+    <br>
+
+    <div class="col-md-7">
+        <button type="submit">Sign in</button>
+    </div>
+
+
+
+</form>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+{% if user.is_authenticated %}
+    <p>Welcome, {{ fname }} {{ lname }}!</p>
+{% else %}
+    <p>You are not logged in.</p>
+{% endif %}
+
+
+{% endblock %}
